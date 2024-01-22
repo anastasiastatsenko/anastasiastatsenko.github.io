@@ -1,0 +1,263 @@
+/* fonts */
+@font-face {
+    font-family: 'manifont';
+    src: url('fonts/manifont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'monumentgrotesk';
+    src: url('fonts/monumentgrotesk.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'monumentgroteskitalic';
+    src: url('fonts/monumentgroteskitalic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'monumentgroteskmedium';
+    src: url('fonts/monumentgroteskmedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* entire page*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+/* Mobile first */
+
+    .container {
+        min-width: 100%;
+        height: 100vh; 
+        padding: 3%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    a {
+        text-decoration: none;
+        color: #353ac3;
+    }
+
+    a:hover {
+        color: #ebf591;
+    }
+
+    a:visited {
+        color: #353ac3;
+    }
+        
+    h1 {
+        font-family: 'monumentgroteskmedium';
+        font-size: 45px;
+        font-weight: normal;
+        color: #353ac3;
+    }
+
+    h2 {
+        font-family: 'monumentgroteskitalic';
+        font-size: 30px;
+        font-weight: normal;
+        margin-bottom: 5%;
+        color: #353ac3;
+    }
+
+    h3 { 
+        font-family: 'monumentgrotesk';
+        font-size: 15px;
+        font-weight: normal;
+        margin-bottom: 15%;
+    }
+
+    p { 
+        font-family: 'monumentgrotesk';
+        font-size: 18px;
+    }
+
+    .quote {
+        font-family: 'manifont';
+        color: #353ac3;
+        font-size: 23px;
+        /* display:block is needed to put padding on a span element */
+        display: block;
+        padding: 4%;
+    }
+
+    .bold {
+        font-family: 'monumentgroteskmedium';
+        background-color: #ebf591;
+    }
+
+    article img {
+        max-width: 100%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    /* dancing baby page */
+
+    .linksbaby {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #ebf591;
+    }
+
+    .linksbaby img {
+        margin: 10%;
+    }
+
+    footer {
+        font-family: 'monumentgrotesk';
+        font-size: 14px;
+        color: #353ac3;
+        display: flex;
+        align-self: center;
+        padding: 8%;
+    }
+
+
+  /* Tablets */
+@media only screen and (min-width: 600px) {
+    
+    .container {
+        padding: 7%;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 18px;
+        margin-bottom: 6%;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+    }
+
+    img {
+        width: 100%;
+        align-self: center;
+    }
+
+    .quote {
+        font-size: 27px;
+        padding: 6%;
+        line-height: 1.2;
+    }
+
+    p {
+        font-size: 18px;
+    }
+    
+    footer {
+        font-size: 18px;
+    }
+
+/* desktop */
+
+@media only screen and (min-width: 900px) {
+    
+    .container {
+        height: auto;
+        padding: 3%;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-family: "monumentgrotesk";
+        font-size: 80px;
+    }
+
+    h2 {
+        font-size: 30px;
+        margin-bottom: 3%;
+    }
+
+    h3 {
+        margin-bottom: 3%;
+    }
+
+    .quote {
+        font-size: 35px;
+        padding: 0% 0% 5% 0%; 
+        line-height: 1.25;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .left {
+        /* border: 1px solid green; */
+        width: 40%;
+        padding: 0% 3%;
+    }
+
+    .right {
+        /* border: 1px solid red; */
+        width: 60%;
+        padding: 0% 4% 6% 1%;
+    }
+
+    .left img {
+        min-width: 100%;
+        align-self: flex-start;
+        margin-top: 0;
+    }
+
+    section p {
+        font-size: 20px;
+        line-height: 1.3;
+    }
+
+    /* dancing baby page */
+
+    .linksbaby {
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+    }
+
+    footer {
+        font-size: 18px;
+        padding: 2%;
+    }
+
+  }
