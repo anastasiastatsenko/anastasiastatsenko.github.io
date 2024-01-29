@@ -1,0 +1,444 @@
+/* fonts */
+@font-face {
+    font-family: 'WhyteInktrap-regular';
+    src: url('fonts/ABCWhyteInktrap-Regular-Trial.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'WhyteInktrap-light';
+  src: url('fonts/ABCWhyteInktrap-Light-Trial.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* entire page*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box!important;
+  }
+
+body {
+    font-size: calc(min(15px + 0.390625vw, 18px));
+    color: black;
+    background-color: #c9cacc;
+    font-family: 'garamond-premier-pro', 'Times New Roman', Times, serif;
+    font-weight: 400;
+    cursor: url("images/cursors/circle.png"), auto;
+  }
+
+/* Mobile first */
+
+.container {
+  padding: 5%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+}
+
+a:hover {
+  font-style: italic;
+  font-size: 2rem;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  z-index: 99;
+  top: 2%;
+}
+
+.logo-text {
+  font-family: 'WhyteInktrap-regular';
+  font-size: 1.2rem;
+  line-height: 0;
+}
+
+.logo-text:hover {
+  font-family: 'WhyteInktrap-regular';
+  font-size: 1.2rem;
+  font-style: normal;
+  line-height: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  width: 100%;
+}
+
+.wrapper {
+  position: relative;
+  margin: 10% 0%;
+}
+
+
+.column-one {
+  margin-top: 20%;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.9rem;
+}
+
+.text-overlay.sage {
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0% 0% 11% 8%;
+}
+
+.text-overlay.peony {
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-align: right;
+  padding: 0% 7% 5% 0%;
+  margin-top: 21%;
+}
+
+#crystal {
+  margin-top: 20%;
+}
+
+.text-overlay.crystal {
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0% 0% 5% 2%;
+  margin-top: 18%;
+}
+
+#lavender {
+  margin-top: 17%;
+}
+
+.text-overlay.lavender {
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 8% 7% 0% 0%;
+  margin-top: 10%;
+}
+
+.text-overlay.rock {
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-align: right;
+  padding: 0% 7% 5% 0%;
+  margin-top: 12%;
+}
+
+/* about page */
+
+.main-about {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.about p {
+  font-family: 'WhyteInktrap-light';
+  font-size: 0.9rem;
+}
+
+  /* Tablets */
+@media only screen and (min-width: 600px) {
+
+  .main {
+    flex-direction: row;
+    height: 100vh;
+  }
+
+  .column-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  #sage {
+    margin-bottom: 30%;
+    width: 145%;
+  }
+
+  .column-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #peony {
+    width: 160%;
+  }
+
+  .text-overlay.peony {
+    padding: 0;
+    margin: 0;
+    margin-top: 5%;
+  }
+  
+  #crystal {
+    width: 135%; 
+  }
+
+  #crystal {
+    margin-top: 0%;
+  }
+  
+  .text-overlay.crystal {
+    padding: 0;
+    margin: 0;
+    margin-top: 20%;
+    align-items: flex-end;
+    
+  }
+
+  .column-three {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  #lavender {
+    width: 113%;
+  }
+
+  #lavender {
+    margin: 0;
+  }
+  
+  .text-overlay.lavender {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .text-overlay.rock {
+    padding: 0;
+    margin: 0;
+  }
+
+  #rock {
+    margin-top: 20%;
+  }
+
+  /* about page */
+
+  .about img {
+    width: 75%;
+    margin-left: 25%;
+
+  }
+
+  .about p {
+    flex: 1;
+    margin-left: 25%;
+  }
+
+}
+
+/* desktop */
+
+@media only screen and (min-width: 900px) {
+
+  .container {
+    padding: 1%;
+  }
+
+  body {
+    width: 100%;
+    height: 97%;
+    overflow: hidden;
+  }
+
+  a {
+    font-size: 2.3rem;
+  }
+
+  a:hover {
+    font-size: 2.3rem;
+  }
+
+  .logo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .logo-text {
+    font-size: 1.9rem;
+  }
+
+  .logo-text:hover {
+    font-size: 1.9rem;
+  }
+
+  .column-one {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .column-two {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+  }
+
+  .column-three {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+  }
+
+  .wrapper {
+    /* border: 2px solid orange; */
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  .image {
+    margin: 0;
+    padding: 0;
+  }
+
+  .image img {
+    max-width: 100%;
+    position: relative;
+    display: block;
+    margin: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .text-overlay {
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+  }
+
+  .text-overlay.sage {
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 45% 15% 0% 0%;
+  }
+
+  .text-overlay.peony {
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0% 25% 0% 0%;
+    text-align: left;
+  }
+
+  .text-overlay.crystal {
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 20% 15% 0% 0%;
+  }
+
+  .text-overlay.lavender {
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .text-overlay.rock {
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    margin: 0;
+    padding: 0% 30% 25% 0%;
+  }
+
+  .image img {
+  opacity: 1;
+  transition: opacity 1s ease;
+  }
+
+  .image:hover img {
+  opacity: 0;
+  }
+
+  .text-overlay:hover {
+  opacity: 1;
+  }
+
+  #sage {
+    max-width: 85%;
+    margin: 0;
+    padding: 50% 0% 0% 0%;
+  }
+
+  #peony {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #crystal {
+    max-width: 90%;
+    margin: 0% 0% 7% 0%;
+    padding: 0;
+  }
+
+  #lavender {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #rock {
+    max-width: 75%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* about page */
+
+  .main-about {
+    display: flex;
+    max-height: 97vh;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;  
+    padding-bottom: 2%;
+  }
+
+  .about img {
+    width: 40%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .about p {
+    width: 50%;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+} 

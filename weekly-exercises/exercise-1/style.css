@@ -1,0 +1,220 @@
+/* fonts */
+@font-face {
+    font-family: 'OldFrench-Regular';
+    src: url('fonts/Hershey-Noailles-OldFrench-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OldFrench-Bold';
+    src: url('fonts/Hershey-Noailles-OldFrench-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MonumentGrotesk';
+    src: url('fonts/monumentgrotesk.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* entire page*/
+
+* {
+    box-sizing: border-box;
+    cursor: url("images/invader-blue.png"), auto;
+  }
+
+  html {
+        font-size: calc(min(15px + 0.390625vw, 18px));
+        color: black;
+        background-color: #fffea3;
+  }
+
+/* Mobile first */
+
+.container {
+    padding: 0% 2%;
+}
+
+p {
+    font-family: 'OldFrench-Regular';
+    font-size: 1.2rem;
+}
+
+h1 {
+    font-family: 'MonumentGrotesk';
+    font-size: 3rem;
+    padding: 2% 0% 6% 0%;
+    margin: 0;
+    color: #00008b;
+}
+
+h2 {
+    font-family: 'MonumentGrotesk';
+    font-size: 1.75rem;
+    padding: 3% 0%;
+    margin: 0;
+}
+
+h3 {
+    font-family: 'MonumentGrotesk';
+    font-size: 1.25rem;
+    padding: 3% 0%;
+    margin: 0;
+}
+
+h4 {
+    font-family: 'MonumentGrotesk';
+    font-size: 1.2rem;
+}
+
+/* testing overlays */
+
+h5 {
+    font-family: 'OldFrench-Bold';
+    font-size: 2rem;
+    color: #00008b;
+}
+
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3%;
+}
+
+.image {
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.overlay-text {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background:rgba(255,254,163,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.overlay-text:hover {
+    opacity: 1;
+}
+
+/* end of testing overlays */
+
+img {
+    width: 100%;
+    border-radius: 5%;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10%;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+    font-family: 'MonumentGrotesk';
+}
+
+
+  /* Tablets */
+@media only screen and (min-width: 600px) {
+    
+    .container {
+        padding: 2%;
+    }
+    
+    .bottom {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        flex: 1;
+        flex-basis: 50%;
+        min-width: 200px;
+        padding: 2%;
+    }
+
+    #last {
+        max-width: 50%;
+    }
+
+}
+
+/* desktop */
+
+@media only screen and (min-width: 900px) {
+ 
+h1 {
+    padding: 0%;
+}
+
+h2 {
+    padding: 0%;
+}
+
+h3 {
+    padding: 0%;
+    /* font-size: 0.8rem; */
+}
+    
+.top {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 15%;
+}
+
+#title {
+    flex: 2;
+}
+
+#assignment {
+    flex: 2;
+    padding-right: 1%;
+}
+
+#prompt {
+    flex: 2;
+}
+
+.bottom {
+    flex-wrap: nowrap;
+}
+
+.item {
+    padding: 1%;
+}
+
+footer {
+    padding-top: 2%;
+}
+
+} 

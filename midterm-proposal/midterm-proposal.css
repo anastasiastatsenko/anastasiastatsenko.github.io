@@ -1,0 +1,75 @@
+/* fonts */
+@font-face {
+  font-family: 'WhyteInktrap-regular';
+  src: url('../fonts/ABCWhyteInktrap-Regular-Trial.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+font-family: 'WhyteInktrap-light';
+src: url('../fonts/ABCWhyteInktrap-Light-Trial.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box!important;
+}
+
+body {
+  font-size: calc(min(15px + 0.390625vw, 18px));
+  color: black;
+  background-color: #c9cacc;
+  font-family: 'garamond-premier-pro', 'Times New Roman', Times, serif;
+  font-weight: 400;
+  cursor: url("../images/cursors/circle.png"), auto;
+  overflow: hidden;
+}
+
+.container {
+padding: 2%;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+a {
+  font-size: 2.3rem;
+}
+
+a {
+text-decoration: none;
+color: black;
+}
+
+.logo {
+width: 200px;
+height: 200px;
+position: fixed;
+top: 1%;
+left: 1%;
+z-index: 99;
+top: 2%;
+}
+
+.logo-text {
+font-family: 'WhyteInktrap-regular';
+font-size: 1.9rem;
+line-height: 0;
+}
+
+.logo-text:hover {
+font-family: 'WhyteInktrap-regular';
+font-size: 1.9rem;
+font-style: normal;
+line-height: 0;
+}
+
+.main p {
+  font-size: 3rem;
+}
+
