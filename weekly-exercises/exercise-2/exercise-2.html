@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2: Javascript Clickable Object</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+            <div class="button-container">
+                <button class="button" data-image="images/tortellini.jpg">tortellini</button>
+                <button class="button" data-image="images/parmiggiano.jpg">parmiggiano</button>
+                <button class="button" data-image="images/mortadella.jpg">mortadella</button>
+                <button class="button" data-image="images/carciofi.jpg">carciofi</button>
+                <button class="button" data-image="images/in-brodo.jpg">in brodo</button>
+                <button class="button" data-image="images/pizze.jpg">pizze</button>
+                <button class="button" data-image="images/ragu.jpg">ragu</button>
+                <button class="button" data-image="images/mercato.jpg">mercato</button>
+                <button class="button" data-image="images/fagottini.jpg">fagottini</button>
+                <button class="button" data-image="images/prosciutto.jpg">prosciutto</button>
+                
+                <div class="bottom">
+                    <!-- why are parentheses there? gpt says they're not necessary, but code breaks without them? -->
+                    <div id="text-container" onmouseover="handleMouseOver()">
+                        <p>Keep your mouse out of here.</p> 
+                    </div>
+            </div>
+
+        <footer>
+            <p>anastasia statsenko | dart449 | winter 2024</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

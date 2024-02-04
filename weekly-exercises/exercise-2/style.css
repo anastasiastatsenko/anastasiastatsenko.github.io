@@ -1,0 +1,110 @@
+/* fonts */
+@font-face {
+    font-family: 'NewHouse';
+    src: url('fonts/NewHouse.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OldRoundHover';
+    src: url('fonts/OldRoundHover.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OldRoundRegular';
+    src: url('fonts/OldRoundRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* entire page*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url("images/white-mouse.png"), auto;
+  }
+
+  html {
+        font-size: calc(min(15px + 0.390625vw, 40px));
+        color: black;
+        background-color: lavender;
+  }
+
+  body {
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'OldRoundRegular';
+  }
+
+  .button-container {
+    min-height: 100vh;
+    background-image: url(images/tortellini.JPG);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}  
+
+  button {
+    font-family: 'OldRoundRegular', 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    padding: .75%;
+    border-radius: 30px;
+    background: rgba(249, 249, 249, 50%);
+    border: 1px solid rgba(249, 249, 249, 50%);
+}
+
+  button:hover {
+    font-family: 'OldRoundHover', 'Times New Roman', Times, serif;
+    color: white;
+    background: rgba(0, 0, 0, 50%);
+}
+
+  button:active {
+    font-family: 'NewHouse', 'Times New Roman', Times, serif;
+    color: white;
+    background: rgba(0, 0, 0, 50%);
+  }
+
+  .button-clicked {
+    font-family: 'NewHouse', 'Times New Roman', Times, serif;
+    color: white;
+    background: rgba(0, 0, 0, 50%);
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1%;
+    color: white;
+  }
+
+  .bottom {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 12%;
+    color: white;
+  }
+
+ 
+
+
+
+
+
+
+
+
+
+
