@@ -1,0 +1,162 @@
+/* fonts */
+@font-face {
+    font-family: 'Syne-Mono';
+    src: url('fonts/Syne-Mono.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Syne-Regular';
+    src: url('fonts/Syne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Syne-Italic';
+    src: url('fonts/Syne-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* entire page*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+html {
+  font-size: calc(min(15px + 0.390625vw, 40px));
+  color: black;
+  background-color:#99fcff;
+  background-image:
+  radial-gradient(at 1% 2%, hsla(12,67%,73%,1) 0px, transparent 50%),
+  radial-gradient(at 66% 54%, hsla(0,50%,73%,1) 0px, transparent 50%),
+  radial-gradient(at 67% 3%, hsla(240,79%,73%,1) 0px, transparent 50%),
+  radial-gradient(at 14% 76%, hsla(208,85%,76%,1) 0px, transparent 50%),
+  radial-gradient(at 16% 6%, hsla(193,63%,72%,1) 0px, transparent 50%),
+  radial-gradient(at 95% 24%, hsla(56,98%,75%,1) 0px, transparent 50%),
+  radial-gradient(at 40% 76%, hsla(287,68%,78%,1) 0px, transparent 50%);
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 1rem;
+  font-family: 'Syne-Mono';
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  padding: 1%; 
+}
+
+.image-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 80%;
+  height: auto;
+  border-radius: 5%;
+}
+
+.text-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container p {
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0% 7%;
+}
+
+#text {
+  margin-bottom: 5%;
+}
+
+#nameInput {
+  margin-bottom: 4%;
+  font-family: 'Syne-Mono';
+  padding: 1%;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+#submitButton {
+  font-family: 'Syne-Mono';
+  font-size: .8rem;
+  padding: 1% 3%;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: black;
+  color: whitesmoke;
+  transition: all 0.3s ease;
+}
+
+#submitButton:hover {
+  background-color: transparent;
+  color: black;
+}
+
+#startOver {
+  font-family: 'Syne-Mono';
+  font-size: .8rem;
+  padding: 1% 3%;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: black;
+  color: whitesmoke;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+#startOver:hover {
+  background-color: transparent;
+  color: black;
+}
+
+#points {
+  margin-top: 7%;
+  font-size: 0.7rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: black;
+  padding-bottom: 1%;
+  font-size: .7rem;
+}
+
+
+
+
+  
+ 
+
+
+
+
+
+
+
+
+
+
