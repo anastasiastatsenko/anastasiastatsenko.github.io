@@ -48,7 +48,7 @@ function submitOnClick() {
         }
 
         fadeIn(textElement, 1000);
-        textElement.textContent = `Welcome ${name}! Ever wonder what kind of mosaic best represents your personality? Answer 3 questions worth 10 points each to reveal your unique mosaic type! Type yes to continue.`;
+        textElement.textContent = `Welcome ${name}! Ever wonder what kind of mosaic best represents your personality? Answer 3 questions to earn 30 points and reveal your unique mosaic type! Type yes to continue.`;
         currentQuestion++;
         /* clears the input field of the previous answer */
         nameInput.value = '';
@@ -75,6 +75,7 @@ function submitOnClick() {
         if (name.toLowerCase() === 'squirrel' || name.toLowerCase() === 'pinecone') {
             answers += name.toLowerCase() + '-';
             points += 10;
+            pointsElement.style.opacity = 1;
             updatePointsDisplay();
             currentQuestion++;
             fadeIn(textElement, 1000);
@@ -119,10 +120,7 @@ function submitOnClick() {
             nameInput.value = '';
             displayPersonalizedImage();
             submitButton.textContent = 'start over';
-            //submitButton.style.opacity = 0;
             nameInput.style.opacity = 0;
-            pointsElement.style.opacity = 0;
-            //startOver.style.opacity = 1;
             
        }
        else {
@@ -131,17 +129,21 @@ function submitOnClick() {
        }
     }
     
+    // return to the beginning, reset values to initial state  
+
     else if (currentQuestion === 5) {
         imageElement.src = '';
         textElement.textContent = 'Enter your name to begin.';
         submitButton.textContent = 'submit';
         nameInput.style.opacity = 1;
         currentQuestion = 0;
+        points = 0;
+        pointsElement.style.opacity = 0;
     }
 
 }
 
-/* change image and award final */
+/* change images for each question */
 
 function changeImage() {
     if (currentQuestion === 2) {
@@ -161,7 +163,7 @@ function updatePointsDisplay() {
     pointsElement.textContent = `${points} points!`;
 }
 
-/* display personalized image at the end of quiz */ 
+/* display personalized image at the end of quiz, code snip from ChatGPT but i mostly understand how it works */ 
 
 function displayPersonalizedImage() {
     const imagePath = imageMap[answers];
@@ -175,7 +177,7 @@ function displayPersonalizedImage() {
     }
 }
 
-/* fade in some elements, code snip from GPT */
+/* fade in some elements, code snip from chatGPT */
 
 function fadeIn(element, duration) {
     let opacity = 0;
