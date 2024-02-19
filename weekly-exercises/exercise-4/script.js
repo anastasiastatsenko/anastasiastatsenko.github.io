@@ -225,7 +225,7 @@ const snowflake = document.querySelector('#snowflake');
 // this code does the same thing as above but using .toggle --> dont really get how this works?
 snowToggle.addEventListener('click', () => {
     snow.style.display = snow.style.display === 'block' ? 'none' : 'block';
-    snowToggle.classList.toggle('spinning');
+    snowflake.classList.toggle('spinning');
 });
 
 // how can i shorten this ???? 
