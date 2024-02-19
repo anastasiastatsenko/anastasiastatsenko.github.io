@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // find all images with class of image
     const images = document.querySelectorAll('.image img')
 
-    //add event listener to each to listen for click, then make modal visible, display image
+    //add event listener to each to listen for click, then make modal visible, display image 
     images.forEach((image) => {
         image.addEventListener('click', () => {
             modal.style.display = 'block';
@@ -113,8 +113,12 @@ const arrowsHover = document.querySelectorAll('.prev, .next');
 
 arrowsHover.forEach(arrow => {
     arrow.addEventListener('mouseenter', () => {
-    cursorClosed.style.opacity = '0';
-    cursorOpen.style.opacity = '1';
+        cursorClosed.style.opacity = '0';
+        cursorOpen.style.opacity = '1';
+    });
+    arrow.addEventListener('mouseleave', () => {
+        cursorClosed.style.opacity = '1';
+        cursorOpen.style.opacity = '0';
     });
 }); 
 
@@ -198,8 +202,63 @@ linethree.addEventListener('click', () => {
     }
 });
 
+// make it snow
 
+let snowClick = 0;
 
+const snowToggle = document.querySelector('.snow-toggle');
+const snow = document.querySelector('.snow-container');
+const snowflake = document.querySelector('#snowflake');
+
+// snowToggle.addEventListener('click', () => {
+//     // faster way of writing a toggle, the line below checks if the number of clicks is even or odd to enable/disable instead of keeping count and resetting to an original state
+//     if (snowClick % 2 === 0) {
+//         snow.style.display = 'block';
+//         snowToggle.classList.add('spinning');
+//     } else {
+//         snow.style.display = 'none';
+//         snowToggle.classList.remove('spinning');
+//     }
+//     snowClick++
+// });
+
+// this code does the same thing as above but using .toggle --> dont really get how this works?
+snowToggle.addEventListener('click', () => {
+    snow.style.display = snow.style.display === 'block' ? 'none' : 'block';
+    snowToggle.classList.toggle('spinning');
+});
+
+// how can i shorten this ???? 
+
+snowToggle.addEventListener('mouseenter', () => {
+    if (!snowToggle.classList.contains('spinning')) {
+        snowflake.style.fill = 'blue';
+    }
+});
+
+snowToggle.addEventListener('mouseleave', () => {
+    if (!snowToggle.classList.contains('spinning')) {
+        snowflake.style.fill = 'white';
+    }
+});
+
+snowToggle.addEventListener('click', () => {
+    if (snowToggle.classList.contains('spinning')) {
+        snowflake.style.fill = 'white';
+    } 
+});
+
+snowToggle.addEventListener('mouseenter', () => {
+    if (snowToggle.classList.contains('spinning')) {
+        snowflake.style.fill = 'blue';
+    }
+});
+
+snowToggle.addEventListener('mouseleave', () => {
+    if (snowToggle.classList.contains('spinning')) {
+        snowflake.style.fill = 'white';
+    }
+});
 
 
 
