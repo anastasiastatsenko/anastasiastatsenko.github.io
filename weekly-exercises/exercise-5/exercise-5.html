@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor and distort effect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <h1>pretty nice hikes</h1>
+        <div class="image-gallery"></div>
+        
+        <footer>
+            <h5>anastasia statsenko | dart449 | winter 2024</h5>
+        </footer>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="hover-effect.umd.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        var hoverDistort = new hoverEffect({
+            parent: document.querySelector('.image-gallery'),
+            intensity: 0.5,
+            image1: 'images/lights.jpg',
+            image2: 'images/adams.jpg',
+            displacementImage: 'images/swim.jpg'
+        });
+    </script>
+
+</body>
+</html>
