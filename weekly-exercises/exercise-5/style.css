@@ -95,7 +95,8 @@ svg.trail {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  /* z-index: 9999; */
+  pointer-events: none; 
 }
 
 svg.trail path {
@@ -112,12 +113,12 @@ svg.trail path {
   background-color: rgb(224, 28, 202);
   opacity: 0.8;
   border-radius: 50%;
-  z-index: 9999;
+  /* z-index: 9999; */
   position: fixed;
   left: 0;
   top: 0;
-  pointer-events: none;
   transform: translate(calc(-50% + 15px), -50%);
+  pointer-events: none;
 }
 
 

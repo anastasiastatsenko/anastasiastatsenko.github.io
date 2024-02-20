@@ -4,7 +4,7 @@ const svg = document.querySelector('svg.trail');
 const path = svg.querySelector('path');
 
 let points = []; 
-let segments = 50;
+let segments = 65;
 let mouse = {
     x: 0,
     y: 0
@@ -40,8 +40,8 @@ const anim = () => {
         let n = points[index + 1];
 
         if (n) {
-            px = px - (p.x - n.x) * 0.3;
-            py = py - (p.y - n.y) * 0.3;
+            px = px - (p.x - n.x) * 0.2;
+            py = py - (p.y - n.y) * 0.2;
         };
     });
 

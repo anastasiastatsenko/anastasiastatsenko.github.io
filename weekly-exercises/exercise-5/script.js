@@ -9,8 +9,8 @@ var myAnimation = new hoverEffect ({
     image1: 'images/adams.jpg',
     image2: 'images/adams1.jpg',
     displacementImage: 'images/disp6.jpg',  
-    speedIn: 2.5,
-    speedOut: 2.5,
+    speedIn: 2,
+    speedOut: 2,
     intensity: 1,
     imagesRatio: 593 / 894 
 });
