@@ -1,14 +1,14 @@
 /* fonts */
 @font-face {
-    font-family: 'Camera-Regular';
+    font-family: 'Favorit-Lining-Book';
     src: url('fonts/ABCFavoritLining-Book-Trial.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-  font-family: 'Oracle-Light';
-  src: url('fonts/ABCOracle-Light-Trial.woff') format('woff');
+  font-family: 'Favorit-Light';
+  src: url('fonts/ABCFavorit-Light-Trial.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -18,51 +18,68 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none;
+}
+
+:root {
+  --color-trail: snow; 
 }
 
 html, body {
-  font-family: 'Camera-Regular';
-  font-size: 18px;
+  font-family: 'Favorit-Lining-Book';
+  font-size: calc(min(15px + 0.390625vw, 18px));
   width: 100%;
   height: 100vh;
   background: #161616;
 }
 
 h1 {
-  font-size: 7rem;
-  color: chartreuse;
+  font-size: 7rem; 
+  /* this code makes a gradient in the text */
+  background-image: linear-gradient(to right, yellow, chartreuse, rgb(224, 28, 202));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
   line-height: 7.5rem;
   position: absolute;
-  top: 33%;
-  left: 24%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  margin: 8% 0% 0% 4.5%; 
+}
+
+ /* If supported, keep the text transparent and use the gradient */
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  h1 {
+    color: transparent;
+  }
+}
+
+/* Fallback for browsers that don't support background-clip: text */
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  /* If not supported, show solid color */
+  h1 {
+    color: chartreuse; /* Fallback color */
+  }
 }
 
 .gallery-wrapper {
+  min-height: 100vh;
+  margin: auto; 
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 
 .image-gallery {
-  /* width: 800px;
-  height: 600px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-  width: 900px;
-  height: 700px;
-}
-
-.image-gallery img {
-  border-radius: 10px;
+  width: 50vw;
+  height: 35vw;
+  position: relative; 
 }
 
 footer {
-  font-family: 'Oracle-Light';
+  font-family: 'Favorit-Light';
   color: chartreuse;
   text-align: center;
   font-size: 1.2rem;
@@ -71,7 +88,37 @@ footer {
   bottom: 0;
   margin-bottom: 1%;
 }
- 
+
+/* cursor svg styling */
+
+svg.trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+svg.trail path {
+  fill: none;
+  stroke: var(--color-trail);
+  stroke-width: 8px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cursor-circle {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(224, 28, 202);
+  opacity: 0.8;
+  border-radius: 50%;
+  z-index: 9999;
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(calc(-50% + 15px), -50%);
+}
 
 
 
