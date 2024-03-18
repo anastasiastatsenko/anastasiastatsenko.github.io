@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: inline-block;
+}
+
+.text {
+  font-size: 18px;
+  letter-spacing: 8px;
+  font-family: monospace;
+  border-right: 2px solid; /*this border is the cursor */
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation:
+    typing 2s steps(19),
+    cursor .4s step-end infinite alternate;
+}
+
+/* cursor blinking */
+@keyframes cursor {
+  50% { border-color: transparent }
+}
+
+/* typing effect */
+@keyframes typing {
+  from { width: 0 }
+}
+
+
+/*https://www.youtube.com/watch?v=yefgBA1CecI*/

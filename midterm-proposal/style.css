@@ -1,0 +1,334 @@
+/* fonts */
+@font-face {
+    font-family: 'WhyteInktrap-regular';
+    src: url('fonts/ABCWhyteInktrap-Regular-Trial.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'favorit-book';
+    src: url('fonts/ABCFavorit-Book-Trial.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'favorit-italic';
+    src: url('fonts/ABCFavorit-BookItalic-Trial.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'favorit-bold';
+    src: url('fonts/ABCFavorit-Bold-Trial.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'favorit-lining';
+    src: url('fonts/ABCFavoritLining-Light-Trial.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* entire page*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Favorit-book', Arial, Helvetica, sans-serif;
+    font-size:  calc(min(15px + 0.390625vw, 40px));
+    color: black;
+    background-color: #f2f2f2;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    color: blue;
+}
+
+li {
+    list-style: none;
+}
+
+sup {
+    font-family: 'favorit-bold';
+    font-size: 0.8rem;
+}
+
+sup a:hover {
+    color: blue;
+}
+
+.blue:hover {
+    color: blue;
+}
+
+h1 {
+    font-family: 'favorit-lining', Arial, Helvetica, sans-serif;
+    font-size: 2em;
+}
+
+h2 {
+    font-family: 'favorit-lining', Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+}
+
+h3 {
+    font-family: 'favorit-italic', Arial, Helvetica, sans-serif;
+    color: blue;
+    font-size: 1.5em;
+}
+
+h4 {
+    font-family: 'favorit-book', Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
+
+h5 {
+    font-family: 'favorit-book', Arial, Helvetica, sans-serif;
+    font-size: 2.5em;
+    text-align: center;
+    color:blue;
+}
+
+.subtitle {
+    font-family: 'favorit-italic', Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    padding: 1% 0%;
+}
+
+/* Mobile first */
+
+.navbar {
+    width: 100%;
+    height: 11vh;
+    z-index: 98;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid black;
+}
+
+.nav-menu {
+    width: 100%;
+    min-height: 100vh;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6em; 
+    background-color: #f2f2f2;
+}
+
+.nav-menu.open {
+    display: flex;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 2%;
+    left: 4%;
+    z-index: 99;
+    font-family: 'WhyteInktrap-regular';
+    font-size: 1.2em;
+    line-height: 1;
+    transition: all 0.7s ease;
+    }
+
+    .logo:hover {
+        color:blue;
+    }
+
+.nav-link {
+    font-family: 'favorit-bold';
+    font-size: 2em;
+    transition: 0.5s ease;
+}
+
+.nav-link:hover {
+    color: blue;
+}
+
+.burger {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    z-index: 99;
+    top: 3%;
+    right: 5%;
+}
+
+.burger.open .bar:nth-child(2){
+    opacity: 0;
+}
+
+.burger.open .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger.open .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.burger .bar {
+    background-color: black;
+}
+
+article {
+    padding: 35% 4% 2% 4%;
+}
+
+hr {
+    width: 100%;
+    margin: 4% auto;
+}
+
+.sources {
+    font-size: 0.7em;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0% 0% 10% 0%;
+}
+
+.style-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.style-wrapper img {
+    width: 90%;
+    padding: 5% 0% 2% 0%;
+}
+
+.style-wrapper video {
+    width: 90%;
+    padding: 5% 0% 2% 0%;
+}
+
+video {
+    width: 100%;
+    border-radius: 5px;
+}
+
+button {
+    background-color: transparent;
+    border: 1.2px solid black;
+    border-radius: 40px;
+    padding: 4% 6%;
+    font-family: 'WhyteInktrap-regular', Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    margin: 5% 0%; 
+}
+
+button:hover {
+    background-color:blue;
+}
+
+button:hover a {
+    color: white;
+}
+
+.list-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 4% 0%; 
+    font-size: 0.8em;
+    color: blue;
+}
+
+/* desktop */
+
+@media only screen and (min-width: 900px) { 
+    
+    .nav-menu {
+        min-height: 10vh;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .logo {
+        width: 100px;
+        height: 100px;
+        left: 1%;
+        font-size: 1.3em;
+        line-height: 0.8;
+        }
+    
+    .nav-link {
+        font-family: 'favorit-book';
+        font-size: 1em;
+        transition: 0.5s ease;
+    }
+    
+    .nav-link:hover {
+        color: blue;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    article {
+        padding: 15% 18% 2% 18%;
+    }
+    
+    .inset {
+        padding: 0% 5%;
+    }
+    
+    button {
+        border: 1.5px solid black;
+        border-radius: 50px;
+        padding: 2% 4%;
+        font-family: 'WhyteInktrap-regular', Arial, Helvetica, sans-serif;
+        font-size: 1.2em;
+    }
+
+    footer {
+        padding: 1% 0%;
+        font-size: 0.7em;
+    }
+}
+
+  

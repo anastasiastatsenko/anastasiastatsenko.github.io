@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'old';
+    src: url('fonts/OldRoundRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'oldHover';
+    src: url('fonts/OldRoundHover.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'new';
+    src: url('fonts/NewHouse.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-change {
+    font-family: 'old', sans-serif;
+    transition: font-family 0.7s ease;
+    font-size: 1.5em;
+}
