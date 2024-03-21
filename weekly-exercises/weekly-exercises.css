@@ -24,13 +24,18 @@ body {
   color: black;
   background-color: #c9cacc;
   font-family: 'garamond-premier-pro', 'Times New Roman', Times, serif;
-  font-weight: 400;
+  font-weight: 200;
   cursor: url("../images/cursors/circle.png"), auto;
   overflow: hidden;
 }
 
+h1 {
+  font-family: 'garamond-premier-pro', 'Times New Roman', Times, serif;
+  font-weight: 200;
+}
+
 .container {
-padding: 2%;
+padding: 15% 15%;
 width: 100%;
 height: 100vh;
 }
@@ -43,6 +48,7 @@ font-size: 1.5rem;
 
 a:hover {
   color: #cc4a27;
+  font-style: italic;
 }
 
 .logo {
@@ -72,11 +78,18 @@ color: black;
 .main {
   height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: top;
   justify-content: space-around;
+  text-align: center;
 }
 
+h2 {
+  margin-bottom: 25%;
+  font-family: 'garamond-premier-pro', 'Times New Roman', Times, serif;
+  font-weight: 700;
+  font-size: 2em;
+}
 
 
 

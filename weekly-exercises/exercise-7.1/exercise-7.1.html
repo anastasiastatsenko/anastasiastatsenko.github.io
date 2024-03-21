@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Main interactions flow</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <main>
+            <div class="wrapper">
+               
+                <div class="row">
+                    <span>profit</span>
+                    <div class="progress-bar">
+                        <span id="profit"></span>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <span>power</span>
+                    <div class="progress-bar">
+                        <span id="power"></span>
+                    </div>
+                </div>
+                
+                <button id="submit-progress" disabled>Submit</button>
+            </div>
+
+            <div class="wrapper">
+                
+                <img id="browser-img" src="images/image1.png" alt="">
+
+                <p>Threat score <span id="threat-score">37</span>/100</p>
+                <div class="row">
+                    <span id="alert" class="blink">ALERT</span><span id="alert-text"></span>
+                </div>
+                <button id="submit-text" disabled>Submit</button>
+            </div>
+
+        </main>
+
+        
+        <script src="script.js"></script>
+    </body>
+</html>
