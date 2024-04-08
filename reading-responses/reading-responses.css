@@ -43,6 +43,7 @@ font-size: 1.5rem;
 
 a:hover {
   color: #cc4a27;
+  font-style: italic;
 }
 
 .logo {
@@ -74,9 +75,14 @@ color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
+h1 {
+  font-family: 'garamond-premier-pro', 'Times New Roman', Times, serif;
+  font-weight: 400;
+  margin: 3% 0%;
+}
 
 
 

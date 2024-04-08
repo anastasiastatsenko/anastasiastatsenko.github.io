@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Personal Secret Agent</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <nav id="nav">
+            <div id="logo-wrapper">
+                <img id="logo" src="images/logo.png">
+                <span id="name">live: agent</span>
+            </div>
+            
+            <div id="toggle-wrapper">
+                <input type="checkbox" id="check">
+                <label for="check" class="toggle"></label>
+            </div>
+        </nav>
+
+        <div id="modal" class="overlay">
+            <section class="section">
+                <img id="logo-long" src="images/logo-long.gif">
+                <p></p>
+                <span class="blink arrow">↓</span>
+            </section>
+
+            <section class="section">
+                <p class="modal-text">The year is 2054. Amazon, Google, Meta, Microsoft, Apple are all now owned by the same parent technoreligious corporation, the Believers in Growth, Diversity, Integrity, Creativity, Knowledge and Sustainability (BIGDICKS).</p>
+
+                <p class="modal-text">You are working as a Personal Secret Agent in data collection at BIGDICKS. Their new nanotechnology placed your body into a medically-induced coma and flashed your consciousness onto 5800 microprocessors embedded in consumer laptops worldwide. Hidden inside the laptop, you can “see” through the user's webcam, as well as their screen and all interactions across connected devices.</p>
+            </section>
+            
+            <section class="section">
+                <p class="modal-text">Your job is to track your user across their digital habitat, collecting ID tags and building their unique consumer profile. Then, match it to their real-world identity and suck em dry using a variety of innovative approaches! As BIGDICKS CEO is fond of saying: “Don't just fuck them, get to know them first!”</p>
+                
+                <p class="modal-text">Your partner is on a nearby chip, running as the human enhancement to the AI algorithm designed to keep the attention (and wallet) of your target close at hand. Their consciousness provides the AI with essential creativity, critical thinking, and emotional response capabilities. You will be released back into your body upon successful completion of the 5 year contract.</p>
+            </section>
+
+            <section class="section login">
+                <p  class="modal-text">Please enter a username to begin.</p>
+                <input type="text" id="username-input" placeholder="agent">
+                <button id="start-btn" class="modal-button">Start</button>
+            </section>
+        </div>
+
+        <div id="end" class="overlay">
+            
+            <section class="section end-text">
+                <p class="modal-text">Congratulations! You've successfully collected enough data to match the TargetID with a real identity, and earned 10 rewards credits.</p>
+                <p class="modal-text">downloading data...</p>
+                <div id="target-data">
+                    <p class="modal-text" id="target-data-text">info downloaded here</p>
+                </div>
+            </section>
+       
+            <section class="section end-rewards">
+                <p class="modal-text">You have 10 rewards credits! Click button to start spending.</p>
+                
+                <div class="rewards-wrapper column">
+                    
+                    <div class="rewards-text row">
+
+                        <div class="rewards-item">
+                            <p class="modal-text">buy a competitor</p>
+                        </div>
+                        <div class="rewards-item">
+                            <p class="modal-text">buy a yacht</p>
+                        </div>
+                        <div class="rewards-item">
+                            <p class="modal-text">buy the election</p>
+                        </div>
+                        <div class="rewards-item">
+                            <p class="modal-text">build new data center</p>
+                        </div>
+                        <div class="rewards-item">
+                            <p class="modal-text">end good journalism</p>
+                        </div>
+                        <div class="rewards-item">
+                            <p class="modal-text">item six</p>
+                        </div>
+                        <div class="rewards-item">
+                            <p class="modal-text">item seven</p>
+                        </div>
+                        <div class="rewards-item">
+                            <p class="modal-text">item eight</p>
+                        </div>
+                        <div class="rewards-item">
+                            <p class="modal-text">item nine</p>
+                        </div>
+                        <div class="rewards-item">
+                            <p class="modal-text">item ten</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rewards-progress-bar">
+                        <span id="rewards"></span>
+                    </div>
+                </div>
+
+                <button id="spend-btn" class="modal-button">Spend</button>
+            </section>
+        </div>
+
+        <div id="toggle-overlay" class="overlay">
+            <section class="section about">
+                <div class="about"></div>
+            </section>
+        </div>
+
+        <main id="main">
+            
+            <video autoplay muted loop disablepictureinpicture id="bg-video">
+                <source src="images/bg-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <div class="agent-side">
+
+                <div class="wrapper column target-wrapper">
+                    
+                    <div class="row" id="print-wrapper">
+                        <img id="print-img" src="images/print0.png"> 
+                        <div class="column center hide">
+                            <h2>targetID</h2>
+                            <h3>user profile</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="column threat-score-wrapper">
+                        <p id="threat-score-div">threat score <span id="threat-score">37</span>/100</p>               
+                        <button id="log-data" disabled>Log data</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="wrapper column alert-wrapper"> 
+
+                    <div class="alert-text-wrapper">
+                        <p id="alert-text"></p>
+                    </div>
+
+                    <div class="progress-wrapper column">
+                        <button id="submit" disabled>Submit</button>
+    
+                        <div class="row">
+                            <h5>profit</h5>
+                            <div class="progress-bar">
+                                <span id="profit"></span>
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <h5>power</h5>
+                            <div class="progress-bar">
+                                <span id="power"></span>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-side">
+                <img id="browser-img" src="images/image1.png" alt="">
+            </div>
+        </main>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
