@@ -349,61 +349,6 @@ function loadMain() {
 
 // SPEND BUTTON INTERACTION //
 
-// function rewardsProgress() {
-//     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-//     const spendBtn = document.getElementById('spend-btn');
-//     const rewardsProgress = document.getElementById('rewards');
-//     const rewardsItems = document.querySelectorAll('.rewards-item');
-//     const rewardText = document.querySelectorAll('.rewardtext');
-//     let spendBtnCount = 0;
-
-//     spendBtn.addEventListener('click', function() {
-//         spendBtnCount++;
-//         if (spendBtnCount >= 1 && spendBtnCount <= 10) {
-//             const newWidth = spendBtnCount * 10;
-//             rewardsProgress.style.width = newWidth + '%';
-
-//             rewardText[spendBtnCount - 1].style.color = 'var(--accent-color2)';
-            
-//             rewardsItems.forEach((item, index) => {
-//                 if (isMobile) {
-//                     if (index === spendBtnCount - 1) {
-//                         item.style.display = 'flex';
-//                     } else {
-//                         item.style.display = 'none';
-//                     }
-//                 } else {
-//                     if (spendBtnCount >= 1 && spendBtnCount <=10) {
-//                         const newWidth = spendBtnCount * 10;
-//                         rewardsProgress.style.width = newWidth + '%';
-//                     } 
-//                 }
-//             });
-
-//             // PLAY AGAIN? 
-
-//             if (spendBtnCount === 10) {
-//                 setTimeout(function() {
-//                     const endTextSection = document.querySelector('.end-text');
-//                     const endRewardsSection = document.querySelector('#end-rewards');
-//                     const playAgainSection = document.getElementById('playagain');
-            
-//                     endTextSection.style.display = 'none';
-//                     endRewardsSection.style.display = 'none';
-//                     playAgainSection.style.display = 'flex';
-            
-//                     if (/Mobi|Android/i.test(navigator.userAgent)) {
-//                         // If the user is on mobile, change the text to 'Click here to play again'
-//                         const playAgainLink = playAgainSection.querySelector('a');
-//                         playAgainLink.textContent = 'Click here to play again.';
-//                     }
-//                 }, 2000);
-//             }
-//         }
-//     });
-// }
-
 function rewardsProgress() {
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
