@@ -9,7 +9,7 @@
     </head>
     <body>
 
-        <nav id="nav">
+        <nav id="nav" class="mobile-nav">
             <div id="logo-wrapper">
                 <img id="logo" src="images/logo.png">
                 <span id="name">live: agent</span>
@@ -22,22 +22,22 @@
         </nav>
 
         <div id="modal" class="overlay">
-            <section class="section">
+            <section class="section welcome">
                 <img id="logo-long" src="images/logo-long.gif">
                 <p></p>
                 <span class="blink arrow">↓</span>
             </section>
 
-            <section class="section">
-                <p class="modal-text">The year is 2054. Amazon, Google, Meta, Microsoft, Apple are all now owned by the same parent technoreligious corporation, the Believers in Growth, Diversity, Integrity, Creativity, Knowledge and Sustainability (BIGDICKS).</p>
+            <section class="section typewriter">
+                <p class="modal-text intro-text">The year is 2054. Amazon, Google, Meta, Microsoft, Apple are all now owned by the same parent technoreligious corporation, the Believers in Growth, Diversity, Integrity, Creativity, Knowledge and Sustainability (BIGDICKS).<br><br>
 
-                <p class="modal-text">You are working as a Personal Secret Agent in data collection at BIGDICKS. Their new nanotechnology placed your body into a medically-induced coma and flashed your consciousness onto 5800 microprocessors embedded in consumer laptops worldwide. Hidden inside the laptop, you can “see” through the user's webcam, as well as their screen and all interactions across connected devices.</p>
+                You are working as a Personal Secret Agent in data collection at BIGDICKS. Their new nanotechnology placed your body into a medically-induced coma and flashed your consciousness onto 5800 microprocessors embedded in consumer laptops worldwide. Hidden inside the laptop, you can “see” through the user's webcam, as well as their screen and all interactions across connected devices.</p>
             </section>
             
-            <section class="section">
-                <p class="modal-text">Your job is to track your user across their digital habitat, collecting ID tags and building their unique consumer profile. Then, match it to their real-world identity and suck em dry using a variety of innovative approaches! As BIGDICKS CEO is fond of saying: “Don't just fuck them, get to know them first!”</p>
+            <section class="section typewriter">
+                <p class="modal-text intro-text">Your job is to track your user across their digital habitat, collecting ID tags and building their unique consumer profile. Then, match it to their real-world identity and suck em dry using a variety of innovative approaches! As BIGDICKS CEO is fond of saying: “Don't just fuck them, get to know them first!”<br><br>
                 
-                <p class="modal-text">Your partner is on a nearby chip, running as the human enhancement to the AI algorithm designed to keep the attention (and wallet) of your target close at hand. Their consciousness provides the AI with essential creativity, critical thinking, and emotional response capabilities. You will be released back into your body upon successful completion of the 5 year contract.</p>
+                Your partner is on a nearby chip, running as the human enhancement to the AI algorithm designed to keep the attention (and wallet) of your target close at hand. Their consciousness provides the AI with essential creativity, critical thinking, and emotional response capabilities. You will be released back into your body upon successful completion of the 5 year contract.</p>
             </section>
 
             <section class="section login">
@@ -50,14 +50,14 @@
         <div id="end" class="overlay">
             
             <section class="section end-text">
-                <p class="modal-text">Congratulations! You've successfully collected enough data to match the TargetID with a real identity, and earned 10 rewards credits.</p>
+                <p class="modal-text">Congratulations! You've successfully collected enough data and matched the TargetID with a real identity, earning 10 rewards credits.</p>
                 <p class="modal-text">downloading data...</p>
                 <div id="target-data">
-                    <p class="modal-text" id="target-data-text">info downloaded here</p>
+                    <p class="modal-text" id="target-data-text"></p>
                 </div>
             </section>
        
-            <section class="section end-rewards">
+            <section class="section" id="end-rewards">
                 <p class="modal-text">You have 10 rewards credits! Click button to start spending.</p>
                 
                 <div class="rewards-wrapper column">
@@ -65,34 +65,34 @@
                     <div class="rewards-text row">
 
                         <div class="rewards-item">
-                            <p class="modal-text">buy a competitor</p>
+                            <p class="modal-text rewardtext">buy 225 new patents</p>
                         </div>
                         <div class="rewards-item">
-                            <p class="modal-text">buy a yacht</p>
+                            <p class="modal-text rewardtext">fund new spyware</p>
                         </div>
                         <div class="rewards-item">
-                            <p class="modal-text">buy the election</p>
+                            <p class="modal-text rewardtext">hire free labor</p>
                         </div>
                         <div class="rewards-item">
-                            <p class="modal-text">build new data center</p>
+                            <p class="modal-text rewardtext">build new datacenter</p>
                         </div>
                         <div class="rewards-item">
-                            <p class="modal-text">end good journalism</p>
+                            <p class="modal-text rewardtext">outsource pollution</p>
                         </div>
                         <div class="rewards-item">
-                            <p class="modal-text">item six</p>
+                            <p class="modal-text rewardtext">hire more lawyers</p>
                         </div>
                         <div class="rewards-item">
-                            <p class="modal-text">item seven</p>
+                            <p class="modal-text rewardtext">buy top competitor</p>
                         </div>
                         <div class="rewards-item">
-                            <p class="modal-text">item eight</p>
+                            <p class="modal-text rewardtext">end good journalism</p>
                         </div>
                         <div class="rewards-item">
-                            <p class="modal-text">item nine</p>
+                            <p class="modal-text rewardtext">buy EU politician</p>
                         </div>
                         <div class="rewards-item">
-                            <p class="modal-text">item ten</p>
+                            <p class="modal-text rewardtext">buy an election</p>
                         </div>
                     </div>
                     
@@ -103,11 +103,38 @@
 
                 <button id="spend-btn" class="modal-button">Spend</button>
             </section>
+
+            <section id="playagain" class="section">
+                <a href="final.html">Play again?</a>
+            </section>
         </div>
 
         <div id="toggle-overlay" class="overlay">
             <section class="section about">
-                <div class="about"></div>
+                <div class="about">
+                    <p class="modal-text">Technology is political - not neutral.</p>
+                    
+                    <p class="modal-text">Personal Secret Agent is a web intervention that explores the intersecting topics of BigTech monopolies, privacy, and the cost of free.</p>
+                    
+                    <p class="modal-text">While there are many resources available on making more sustainable choices and lifestyles, few of them address the digital world. Today's crises (housing, food, climate, land, social) are interconnected, and our physical and digital worlds also deeply so—in many ways they coproduce each other.</p>
+                    
+                    <p class="modal-text">As a small step towards investgating this complex relationship, Personal Secret Agent challenges you to think about the ways your online habits contribute to and maintain exploitative power dynamics responsible for the degradation of our planetary ecologies. There is immense potential for positive change when scaling individual habits, and the choices we make about the digital products and services we use are no exception.</p>
+                    
+                    <p class="modal-text">Learn more about the topic and the facts hiding behind the satire in my <a href="essay.html" target="_blank">short essay</a>.</p>
+            </section>
+  
+            <section class="section about">
+                <div class="about">
+                    <p class="modal-text">Dig deeper at the <a href="https://www.eff.org/updates?type=whitepaper" target="_blank">Electronic Frontier Foundation (EFF) </a>and the <a href="https://www.economicliberties.us/learn/our-work/#" target="_blank">American Economic Liberties Project (AELP)</a>.</p>
+
+                    <p class="modal-text">Find privacy-focussed alternatives at <a href="https://www.privacytools.io/ " target="_blank">Privacy Tools</a> and <a href="https://github.com/pluja/awesome-privacy" target="_blank">Awesome Privacy</a>.</p>
+
+                    <p class="modal-text">Test how trackers view your browser <a href="https://coveryourtracks.eff.org/" target="_blank"> here </a>and<a href="https://browserleaks.com/
+                        " target="_blank"> here </a>.</p>
+
+                    <p class="modal-text">View your browser fingerprint <a href="https://amiunique.org 
+                        " target="_blank"> here</a>.</p>
+                </div>
             </section>
         </div>
 
@@ -164,7 +191,7 @@
             </div>
 
             <div class="user-side">
-                <img id="browser-img" src="images/image1.png" alt="">
+                <img id="browser-img" src="images/image1.gif" alt="">
             </div>
         </main>
         

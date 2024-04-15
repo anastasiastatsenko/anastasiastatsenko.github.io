@@ -35,8 +35,82 @@ document.addEventListener('DOMContentLoaded', function() {
             loadMain();
         }
     }
+    toggleOverlay();
     modalOverlay();
     rewardsProgress();
+
+    // HIDE ARROW ON SCROLL 
+
+    window.addEventListener('scroll', function() {
+        const element = document.querySelector('.arrow'); 
+        if (window.scrollY > 100) { // Adjust the threshold as needed
+            element.style.visibility = 'hidden'; 
+        } else {
+            element.style.visibility = 'visible'; 
+        }
+    });
+
+    // ANIMATE OPENING TEXT
+
+    // Intersection Observer callback function
+    function intersectionCallback(entries, observer) {
+        entries.forEach(entry => {
+            // Check if the target element is intersecting and has not already been animated
+            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                const textElements = entry.target.querySelectorAll('.modal-text');
+                textElements.forEach((textElement, index) => {
+                    const text = textElement.textContent;
+                    textElement.textContent = ''; // Clear existing text
+                    textElement.style.visibility = 'visible'; // Ensure the text is visible before animation starts
+                    animateText(textElement, text, 45 * (index + 1)); // Adjust speed as needed
+                });
+                entry.target.classList.add('animated'); // Mark the section as animated to prevent re-triggering
+            }
+        });
+
+        // Make the .login section visible when it's in the center of the viewport
+        const loginSection = document.querySelector('.section.login');
+        if (isInViewportCenter(loginSection)) {
+            loginSection.style.opacity = 1;
+        } else {
+            loginSection.style.opacity = 0;
+        }
+    }
+
+    // Function to animate text
+    function animateText(element, text, speed) {
+        let i = 0;
+        const typeInterval = setInterval(function() {
+            element.textContent += text.charAt(i);
+            i++;
+            if (i > text.length) {
+                clearInterval(typeInterval);
+            }
+        }, speed);
+    }
+
+    // Function to check if an element is in the center of the viewport
+    function isInViewportCenter(element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const center = windowHeight / 2;
+        return (
+            rect.top <= center &&
+            rect.bottom >= center
+        );
+    }
+
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver(intersectionCallback, { threshold: 0.5 });
+
+    // Get all sections with the class 'typewriter'
+    const sections = document.querySelectorAll('.typewriter');
+
+    // Observe each section
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
 });
 
 // RUN THIS FUNCTION WHEN MODAL IS CLOSED
@@ -63,7 +137,7 @@ function loadMain() {
 
     // if mobile, use mobile image for first in array
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const initialImage = isMobile ? 'images/mobile1.png' : 'images/image1.png';
+    const initialImage = isMobile ? 'images/mobile1.png' : 'images/image1.gif';
     browserImg.src = initialImage;    
 
     // if mobile, use mobile background 
@@ -74,21 +148,23 @@ function loadMain() {
 
         const bgVideo = document.getElementById('bg-video');
         bgVideo.parentNode.replaceChild(bgImage, bgVideo);
+    } else {
+        enableSound();
+        alert("Enable sound for the full experience."); 
     }
 
-    browserImg.style.opacity = 1;     
+    browserImg.style.opacity = 0.85;     
     browserImg.style.transform = 'scale(0)';
     setTimeout(() => zoomInImage(browserImg, 100), 5000);
 
     setTimeout(function() {
-        animateText(alertText, 'First alert here! Typing more to make sure it takes up more than one line ok is this long enough now? I think so, but lets be sure!', 25);
+        animateText(alertText, 'Incognito session: ignore. Track and optimize search results to align with Paid Partner and Electoral Strategy goals?', 25);
     }, 5000);
 
     setTimeout(function() {
         logDataBtn.disabled = false;
         submitBtn.disabled = false;
-    }, 12000);
-
+    }, 25000);
 
     // SUBMIT BUTTON CLICK INTERACTIONS
 
@@ -147,15 +223,15 @@ function loadMain() {
     function updateImg() {
         const images = [];
         const alerts = [
-            'Second alert written here! Typing more to make sure it takes up more than one line ok is this long enough now? I think so, but lets be sure!',
-            'Third alert written here! Typing more to make sure it takes up more than one line ok is this long enough now? I think so, but lets be sure!',
-            'Fourth alert written here! Typing more to make sure it takes up more than one line ok is this long enough now? I think so, but lets be sure!',
-            'Fifth alert written here! Typing more to make sure it takes up more than one line ok is this long enough now? I think so, but lets be sure!',
-            'Sixth alert written here! Typing more to make sure it takes up more than one line ok is this long enough now? I think so, but lets be sure!',
-            'Seventh alert written here! Typing more to make sure it takes up more than one line ok is this long enough now? I think so, but lets be sure!',
-            'Eighth alert written here! Typing more to make sure it takes up more than one line ok is this long enough now? I think so, but lets be sure!',
-            'Ninth alert written here! Typing more to make sure it takes up more than one line ok is this long enough now? I think so, but lets be sure!',
-            'Tenth alert written here! Typing more to make sure it takes up more than one line ok is this long enough now? I think so, but lets be sure!'
+            'New eye tracking, facial expression, skin tone, heartbeat, Google voice data available. Link to recent search, cart, order and live Ring cam footage data?',
+            'Recent messages indicate 82% likelihood of change in happiness, suggested premium increase or benefit cancellation. Send new data to insurance provider?',
+            'New Mastercard transactions and gender-specific credit rating available. Update user credit risk score with financial institution partners?',
+            'User demographic conflict with New Urban Plan. Link user searches to rent-setting algorithm and display listings that correspond to race-religion-income profile?',
+            'Content warning: rewrite headlines to better reflect current political goals, increase ad revenue, and keep user engagement?',
+            'New health data available, potential pro-choice content flagged. Decrypt medical records?',
+            'Email content and contacts scan complete, Official Campaigns moved to Main Inbox, Nonprofit Advocacy moved to Spam. Cross-reference new data with Terrorism Score and Unions Prevention Database?',
+            'Recent location is a 93% match to criminal sector (Predictive Policing Code 44-Protest). Send threat score and location log to law enforcement?',
+            'Warning: government-issued activism risk. Censor recent political keywords, local organizing content and restrict resource access (label: misinformation)?'
         ];
     
         const index = submitBtnCount - 1;
@@ -169,7 +245,7 @@ function loadMain() {
             }
         } else {
             for (let i = 2; i <= 10; i++) {
-                images.push(`images/image${i}.png`);
+                images.push(`images/image${i}.gif`);
             }
         }     
 
@@ -186,18 +262,6 @@ function loadMain() {
         endGame();
     }    
 
-    // END GAME // 
-    // function endGame() {
-    //     if (logDataBtnCount===10 && submitBtnCount === 10) {
-    //         const main = document.getElementById('main');
-    //         main.style.display = 'none';
-    //         const end = document.getElementById('end');
-    //         end.style.display = 'flex';
-    //         const name = document.getElementById('name');
-    //         name.style.opacity = 0;
-    //         }
-    // }
-
     function endGame() {
         if (logDataBtnCount===10 && submitBtnCount === 10) {
             const main = document.getElementById('main');
@@ -207,6 +271,9 @@ function loadMain() {
             main.style.display = 'none';
             end.style.display = 'flex';
             name.style.opacity = 0;
+
+            disableSound();
+            updateTargetDataText();
         }
     }
 
@@ -286,6 +353,7 @@ function rewardsProgress() {
     const spendBtn = document.getElementById('spend-btn');
     const rewardsProgress = document.getElementById('rewards');
     const rewardsItems = document.querySelectorAll('.rewards-item');
+    const rewardText = document.querySelectorAll('.rewardtext');
     let spendBtnCount = 0;
 
     spendBtn.addEventListener('click', function() {
@@ -294,6 +362,8 @@ function rewardsProgress() {
             const newWidth = spendBtnCount * 10;
             rewardsProgress.style.width = newWidth + '%';
 
+            rewardText[spendBtnCount - 1].style.color = 'var(--accent-color2)';
+            
             rewardsItems.forEach((item, index) => {
                 if (isMobile) {
                     if (index === spendBtnCount - 1) {
@@ -308,20 +378,137 @@ function rewardsProgress() {
                     } 
                 }
             });
+
+            // PLAY AGAIN? 
+            // if (spendBtnCount === 10) {
+            //     setTimeout(function() {
+            //         const endTextSection = document.querySelector('.end-text');
+            //         const endRewardsSection = document.querySelector('#end-rewards');
+            //         const playAgainSection = document.getElementById('playagain');
+
+            //         endTextSection.style.display = 'none';
+            //         endRewardsSection.style.display = 'none';
+            //         playAgainSection.style.display = 'flex';
+            //     }, 2000); 
+            // }
+            if (spendBtnCount === 10) {
+                setTimeout(function() {
+                    const endTextSection = document.querySelector('.end-text');
+                    const endRewardsSection = document.querySelector('#end-rewards');
+                    const playAgainSection = document.getElementById('playagain');
+            
+                    endTextSection.style.display = 'none';
+                    endRewardsSection.style.display = 'none';
+                    playAgainSection.style.display = 'flex';
+            
+                    if (/Mobi|Android/i.test(navigator.userAgent)) {
+                        // If the user is on mobile, change the text to 'Click here to play again'
+                        const playAgainLink = playAgainSection.querySelector('a');
+                        playAgainLink.textContent = 'Click here to play again.';
+                    }
+                }, 2000);
+            }
         }
     });
 }
 
-// ANIMATE OPENING TEXT ON SCROLL
+// TOGGLE OVERLAY 
 
-// RUN THIS FUNCTION WHEN TOGGLE IS CLICKED 
+function toggleOverlay() {
+    const toggleOverlay = document.querySelector('#toggle-overlay');
+    const toggle = document.querySelector('.toggle');
+    const logoWrapper = document.querySelector('#logo-wrapper');
+    const nav = document.querySelector('.mobile-nav');
+    let isOpen = false;
 
-// DRAGGABLE BROWSER IMAGE TEST gsap 
-    
-// INVERT TEXT COLOR AND BG COLOR ON RERFESH
+    toggle.addEventListener('click', function() {
+        if (!isOpen) {
+            toggleOverlay.style.display = 'block';
+            logoWrapper.style.visibility = 'hidden';
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                nav.style.backgroundColor = 'var(--primary-color)'; 
+            }
+            isOpen = true;
+        } else {
+            toggleOverlay.style.display = 'none';
+            logoWrapper.style.visibility = 'visible';
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                nav.style.backgroundColor = 'var(--secondary-color)'; 
+            }
+            isOpen = false;
+        }
+    });
+}
 
-// REPLACE LOGO ON MOBLE TO BE A SMALLER ONE 
+// VIDEO SOUND
 
-// CUSTOM SCROLL BARS
+function enableSound() {
+    const video = document.getElementById('bg-video');
+    video.muted = false;
+}
 
-// ENABLE SOUND
+function disableSound() {
+    const video = document.getElementById('bg-video');
+    video.muted = true;
+}
+
+// CYCLE THROUGH DOWNLOADED DATA TEXT 
+
+const targetDataTexts = [
+    "operating system windows",
+    "IP address 45.88.186.23",
+    "isp bell canada",
+    "useragent Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0)Gecko/20100101 Firefox/124.0",
+    "accept text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "signature 1e80a0c3a40d7f7178aa5451138acb2f",
+    "canvas hash 6252032b4c22ec78b48",
+    "webgl hash 4e54c35aab03b1ec06",
+    "language english",
+    "timezone UTC-06:00",
+    "applications installed apps041224-298654375y294i192i39823y5.xls",
+    "most visited websites sites041224-298654375y294i192i39823y5.xls",
+    "MAID 298654375y294i192i39823y5",
+    "location toronto ontario canada",
+    "birthdate june 14 2000",
+    "gender female",
+    "ethnicity caucasian",
+    "education bachelor of arts and science",
+    "income bracket 24000-35000",
+    "demographic american citizen",
+    "profession student",
+    "cellphone provider bell canada",
+    "credit score 548",
+    "threat score 78",
+    "relationship status married",
+    "political affiliation liberal",
+    "applications installed apps041224-298654375y294i192i39823y5.xls",
+    "email provider gmail",
+    "email contents email041224-298654375y294i192i39823y5.xls",
+    "location tracking most visited websites websites041224-298654375y294i192i39823y5.xls",
+    "location tracking google maps maps041224-298654375y294i192i39823y5.xls",
+    "insurance provider desjardins claims041224-298654375y294i192i39823y5.xls",
+    "advertising preferences clicked041224-298654375y294i192i39823y5.xls",
+    "purchases purchased 041224-298654375y294i192i39823y5.xls",
+    "recent downloads files041224-298654375y294i192i39823y5.xls",
+    "online hour log timestamps041224-298654375y294i192i39823y5.xls",
+    "risk factors risks041224-298654375y294i192i39823y5.xls",
+    "known associates associates041224-298654375y294i192i39823y5.xls",
+    "close friends closefriends041224-298654375y294i192i39823y5.xls",
+    "predictive purchasing predpurch041224-298654375y294i192i39823y5.xls",
+    "recent activity flagged041224-298654375y294i192i39823y5.xls"
+]; 
+
+const targetDataTextElement = document.getElementById('target-data-text');
+
+let currentIndex = 0;
+
+function updateTargetDataText() {
+    targetDataTextElement.textContent = targetDataTexts[currentIndex];
+    currentIndex = (currentIndex + 1) % targetDataTexts.length; // Loop back to the beginning when reaching the end
+}
+
+setInterval(updateTargetDataText, 175);
+
+// ABOUT IMAGE GALLERY 
+
+
