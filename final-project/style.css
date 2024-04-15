@@ -266,6 +266,11 @@ input, button, textarea, select {
   display: none;
  }
 
+ #end-rewards {
+  background-image: none;
+  background-size: cover;
+ }
+
  .section.end-text {
   gap: 3.5rem;
   display: flex;
@@ -709,6 +714,8 @@ button:hover {
   .rewards-progress-bar {
     min-width: 90%;
   }
+
+  /* PLAY AGAIN */
 
   #playagain {
     text-align: center;
