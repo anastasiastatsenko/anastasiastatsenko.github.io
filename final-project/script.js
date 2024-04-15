@@ -29,13 +29,15 @@ document.addEventListener('DOMContentLoaded', function() {
             agentNameInput.textContent = `live: agent ${name}`;
 
             // ADD NICE PAGE TRANSITIONS HERE
-            // try edition css to use position + z-index to make a stack instead
+            // try editing css to use position + z-index to make a stack instead
+            // display none doesnt work with transitions, only opacity 
             main.style.display = 'flex';
             modal.style.display = 'none';
             loadMain();
         }
     }
     toggleOverlay();
+    changeText();
     modalOverlay();
     rewardsProgress();
 
@@ -164,7 +166,7 @@ function loadMain() {
     setTimeout(function() {
         logDataBtn.disabled = false;
         submitBtn.disabled = false;
-    }, 25000);
+    }, 12000);
 
     // SUBMIT BUTTON CLICK INTERACTIONS
 
@@ -380,17 +382,7 @@ function rewardsProgress() {
             });
 
             // PLAY AGAIN? 
-            // if (spendBtnCount === 10) {
-            //     setTimeout(function() {
-            //         const endTextSection = document.querySelector('.end-text');
-            //         const endRewardsSection = document.querySelector('#end-rewards');
-            //         const playAgainSection = document.getElementById('playagain');
 
-            //         endTextSection.style.display = 'none';
-            //         endRewardsSection.style.display = 'none';
-            //         playAgainSection.style.display = 'flex';
-            //     }, 2000); 
-            // }
             if (spendBtnCount === 10) {
                 setTimeout(function() {
                     const endTextSection = document.querySelector('.end-text');
@@ -511,4 +503,45 @@ setInterval(updateTargetDataText, 175);
 
 // ABOUT IMAGE GALLERY 
 
+const texts = [
+    "ensures our rights are respected and protected",
+    "allows us to work with dignity",
+    "limits how data can be used against us",
+    "helps us defend ourselves",
+    "facilitates access to justice",
+    "protects our right to education",
+    "protects our standard of living",
+    "protects our right to rest",
+    "protects our free elections",
+    "protects our access to social security",
+    "protects our property",
+    "protects those fleeing from persecution",
+    "protects our ability to move freely",
+    "protects our bodily autonomy",
+    "protects our freedom of thought",
+    "protects our right to protest",
+    "protects our beliefs",
+    "protects marriage equality"
+];
+let aboutInfoIndex = 0; 
+
+function changeText() {
+    const aboutInfoText = document.getElementById("about-info-text");
+    aboutInfoText.textContent = texts[aboutInfoIndex];
+
+    // Increment aboutInfoIndex for the next text
+    aboutInfoIndex = (aboutInfoIndex + 1) % texts.length;
+
+    // Change text color based on aboutInfoIndex
+    if (aboutInfoIndex % 2 === 0) {
+        aboutInfoText.style.color = 'var(--accent-color)';
+    } else {
+        aboutInfoText.style.color = 'var(--accent-color)';
+    }
+}
+
+changeText();
+setInterval(changeText, 800);
+
+// $ RAIN 
 

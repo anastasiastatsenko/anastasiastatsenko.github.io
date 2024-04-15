@@ -217,6 +217,11 @@ input, button, textarea, select {
   font-size: 45px;
  }
 
+ .end-text .arrow {
+  font-size: 30px;
+  padding-top: 5%;
+ }
+
  .modal-text {
   font-size: 1.5rem;
   color: var(--secondary-color);
@@ -364,6 +369,23 @@ input, button, textarea, select {
 .about a:visited {
   font-family: 'OldRoundHover';
   color:#bc4444;
+}
+
+.about-info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0% 7%;
+  justify-content: flex-start;
+}
+
+.about-info .modal-text {
+  font-size: 2.5rem;
+  padding: 0% 2%;
+}
+
+#about-info-text {
+  color: var(--accent-color2);
 }
 
  /* MAIN PAGE */
@@ -708,6 +730,24 @@ button:hover {
 
   .about p {
     margin-bottom: 12%; 
+  }
+
+  .about-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 15vh;
+    padding: 0;
+    justify-content: flex-start;
+  }
+  
+  .about-info .modal-text {
+    font-size: 1.7rem;
+    padding: 0% 2%;
+  }
+  
+  #about-info-text {
+    color: var(--accent-color2);
   }
 
   /* MAIN PAGE */
